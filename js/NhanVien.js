@@ -10,5 +10,13 @@ function NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, 
     this.tongLuong = 0; 
     this.loaiNhanVien = "";
 
-
+    this.tinhTongLuong = function(){
+        if(this.chucVu == "Sếp"){
+            this.tongLuong = luongCoBan * 3;
+        } else if(this.chucVu == "Trưởng phòng"){
+            this.tongLuong = luongCoBan * 2;
+        } else {
+            this.tongLuong = luongCoBan;
+        }
+    }
 }

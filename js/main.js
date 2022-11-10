@@ -1,4 +1,5 @@
 const dsnv = new DanhSachNhanVien();
+const validation = new Validation();
 
 function setLocalStorage() {
     localStorage.setItem("DSNV",JSON.stringify(dsnv.mangNV));
@@ -24,12 +25,22 @@ function themNhanVien() {
    var chucVu = document.querySelector("#chucvu").value;
    var gioLam = document.querySelector("#gioLam").value;
 
-   var nv = new NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, gioLam);
+   taiKhoan = taiKhoan.replace(/\s/g,"");
 
-   console.log(nv);
-   dsnv.themNV(nv);
-   hienThiTableNV(dsnv.mangNV);
-   setLocalStorage();
+   var isValid = true;
+    isValid &= validation.checkEmpty(taiKhoan,"Tài khoản không được để trống","tbTKNV") && validation.checkTK(taiKhoan,"Tài khoản phải từ 4-6 ký tự","tbTKNV");
+
+    isValid &= validation.checkEmpty(hoTen,"Họ và tên không được để trống","tbTen") && validation.checkTen(hoTen,"Họ và tên không đúng định dạng","tbTen");
+
+   if(isValid){
+    var nv = new NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, gioLam);
+    nv.tinhTongLuong();
+
+    console.log(nv);
+    dsnv.themNV(nv);
+    hienThiTableNV(dsnv.mangNV);
+    setLocalStorage();
+   }
 }
 
 function hienThiTableNV(mang) {
