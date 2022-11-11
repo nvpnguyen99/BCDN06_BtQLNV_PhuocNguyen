@@ -19,4 +19,16 @@ function NhanVien(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, 
             this.tongLuong = luongCoBan;
         }
     }
+
+    this.xepLoaiNhanVien = function(){
+        if(this.gioLam >= 192){
+            this.loaiNhanVien = "nhân viên Xuất Sắc";
+        } else if(this.gioLam >= 176){
+            this.loaiNhanVien = "nhân viên Giỏi";
+        } else if(this.gioLam >= 160){
+            this.loaiNhanVien = "nhân viên Khá";
+        } else {
+            this.loaiNhanVien = "nhân viên Trung Bình";
+        }
+    }
 }
