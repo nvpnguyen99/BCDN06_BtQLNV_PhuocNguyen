@@ -20,4 +20,11 @@ function DanhSachNhanVien(){
             this.mangNV.splice(viTri, 1);
         }
     }
+
+    this.capNhatNV = function(nhanVienCapNhat){
+      var viTri = this.timViTriNhanVien(nhanVienCapNhat.taiKhoan);
+      if(viTri != -1){
+        this.mangNV[viTri] = nhanVienCapNhat;
+      }
+    }
 }
