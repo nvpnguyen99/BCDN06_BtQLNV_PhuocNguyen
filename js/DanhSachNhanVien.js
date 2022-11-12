@@ -27,4 +27,18 @@ function DanhSachNhanVien(){
         this.mangNV[viTri] = nhanVienCapNhat;
       }
     }
+
+    this.timKiemNV = function(tuKhoaTimKiem){
+        var mangKQ = [];
+        var tuKhoa = tuKhoaTimKiem.toLowerCase().replace(/\s/g,"");
+        
+        this.mangNV.map(function(nv){
+            var xepLoaiNV = nv.loaiNhanVien.toLowerCase().replace(/\s/g,"");
+
+            if(xepLoaiNV.indexOf(tuKhoa) > -1){
+                mangKQ.push(nv)
+            }
+        });
+        return mangKQ;
+    }
 }

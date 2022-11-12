@@ -148,3 +148,16 @@ function resetForm(){
 }
 
 document.querySelector("#btnCapNhat").onclick = capNhatNhanVien;
+
+function timKiemNhanVien(){
+    var tuKhoaTimKiem = document.querySelector("#searchName").value;
+
+   var mangKQ = dsnv.timKiemNV(tuKhoaTimKiem);
+   hienThiTableNV(mangKQ);
+}
+
+document.querySelector("#btnTimNV").addEventListener("click", function(){
+timKiemNhanVien();
+});
+
+document.querySelector("#searchName").onkeyup = timKiemNhanVien;
