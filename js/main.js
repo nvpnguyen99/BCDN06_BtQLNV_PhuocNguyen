@@ -49,7 +49,6 @@ function themNhanVien() {
     nv.tinhTongLuong();
     nv.xepLoaiNhanVien();
 
-    console.log(nv);
     dsnv.themNV(nv);
     hienThiTableNV(dsnv.mangNV);
     setLocalStorage();
@@ -137,7 +136,7 @@ function capNhatNhanVien(){
      setLocalStorage();
 
      resetForm();
-     alert("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉    🎉🎉🎉🎉🎉🎉  CẬP NHẬT THÀNH CÔNG   🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉")
+     alert("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉    🎉🎉🎉🎉🎉🎉  CẬP NHẬT THÀNH CÔNG   🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉")
      document.querySelector("#btnDong").click();
     }
 }
